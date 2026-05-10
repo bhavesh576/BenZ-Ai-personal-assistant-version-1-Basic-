@@ -4,7 +4,7 @@ try:                  #Try block (attempt to read file)
     with open("memory.json", "r") as f:   #"r" = READ
         memory = json.load(f)
 except:                  #Except block (if file is missing or error happens)
-    memory[user_id]= {}
+    memory = {}
 
 def save_memory():
 
@@ -73,11 +73,19 @@ while True:
            print("BenZ AI ==> Invalid input.")     
 
    elif "show notes" in user_input:
+       
        if "notes" in memory and memory["notes"]:
            print("BenZ AI ==> your notes:")
 
+           for i in memory["notes"]:
+               print(i)
+
+       else:
+           print("BenZ AI ==> No notes found.")
+
 
    elif user_input in bot_responses:
+       
        print("BenZ Ai==>",bot_responses[user_input])
        
    else:

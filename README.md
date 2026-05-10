@@ -1,31 +1,41 @@
 # BENZ AI (Version 1)
 
-BENZ AI is a beginner-level Python terminal-based personal assistant. It is built to practice programming logic and basic data handling.
+BENZ AI is a beginner-level Python terminal-based personal assistant project created to practice Python fundamentals, logic building, memory handling, and local data storage without using APIs or external AI models.
+
+---
 
 ## Features
-- Add notes and tasks  
-- View saved notes  
-- Delete notes  
-- Store simple personal information  
-- Command-based interaction system  
 
-## Tech Used
-- Python (basic concepts only)  
-- Lists and dictionaries  
-- Loops and conditions  
+- Basic chatbot interaction system
+- Remembers user information
+- Saves notes permanently using JSON
+- Show saved notes
+- Delete saved notes
+- Local memory storage
+- Fully offline assistant
+- Beginner-friendly project structure
 
-## Purpose
-- Improve logic building  
-- Practice Python fundamentals  
-- Understand how basic assistant systems work  
+---
 
-## Version
-- Version: 1  
-- Fully offline  
-- No AI APIs or machine learning used  
+## Technologies Used
 
-## Future Updates
-- File-based storage  
-- Better user interface  
-- AI integration  
-- Voice support
+- Python
+- JSON File Handling
+- Dictionaries
+- Lists
+- Loops
+- Conditions
+- Functions
+
+---
+
+## Project Structure
+
+```bash
+BENZ AI/
+│
+├── basic version/
+│   ├── main.py
+│   ├── memory.json
+│
+├── README.md

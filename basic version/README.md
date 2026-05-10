@@ -1,4 +1,4 @@
-# BENZ AI (Version 1)
+# BenZ Ai (Version 1)
 
 BENZ AI is a beginner-level Python terminal-based personal assistant project created to practice Python fundamentals, logic building, memory handling, and local data storage without using APIs or external AI models.
 

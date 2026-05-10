@@ -4,7 +4,7 @@ try:                  #Try block (attempt to read file)
     with open("memory.json", "r") as f:   #"r" = READ
         memory = json.load(f)
 except:                  #Except block (if file is missing or error happens)
-    memory = {}
+    memory[user_id]= {}
 
 def save_memory():
 
@@ -25,21 +25,63 @@ bot_responses = {
 while True:
    
    user_input = input("You==>").lower().strip()
+        
    
    if "remember my name is" in user_input:          #STORE logic
+      
       name = user_input.replace("remember my name is", "").strip()
       memory["name"]=name
       save_memory()
       print("BenZ Ai==> I will remember your name.")
 
    elif "what is my name" in user_input:
+        
         print("BenZ Ai ==>",memory.get("name","I don't know your name yet"))
+
+   elif "save note" in user_input:       # save notes
+       
+       note = input("Enter your notes: ")
+
+       if "notes" not in memory:
+           memory["notes"] = []
+
+       memory["notes"].append(note)
+       save_memory()
+       print("Notes saved successfully!")
+
+   elif "delete notes" in user_input:
+       
+       note = input("Are you sure you want to delete all notes? (yes/No) :  ")
+
+       if note.lower() in ["yes", "y"]:
+           
+           if "notes" in memory:
+               del memory["notes"]
+               save_memory()
+               print("BenZ AI ==> Notes deleted successfully!")
+
+           else:
+               
+               print("BenZ AI ==> No notes found.")
+
+       elif note.lower() in ["no","n"]:
+           
+           print("BenZ AI ==> Deletion cancelled.")
+
+       else:
+           
+           print("BenZ AI ==> Invalid input.")     
+
+   elif "show notes" in user_input:
+       if "notes" in memory and memory["notes"]:
+           print("BenZ AI ==> your notes:")
+
 
    elif user_input in bot_responses:
        print("BenZ Ai==>",bot_responses[user_input])
        
    else:
-       print("BenZ Ai==> I didn't understand")   
+       print("BenZ Ai==> I don't understand that.")   
 
  
 
